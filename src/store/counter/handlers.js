@@ -1,12 +1,15 @@
+import { increment, decrement, reset } from "./actions";
+
+
 export function incrementDecrement(dispatch) {
   return {
-    increment: () => dispatch({type: "INCREMENT"}),
-    decrement: () => dispatch({type: "DECREMENT"})
+    increment: () => dispatch(increment(2)),
+    decrement: () => dispatch(decrement())
   }
 }
 
 export function resetter(dispatch) {
   return {
-    reset: () => dispatch({type: "RESET"})
+    reset: () => dispatch(reset())
   }
 }

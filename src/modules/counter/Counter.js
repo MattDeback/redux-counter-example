@@ -5,7 +5,6 @@ import { incrementDecrement } from "../../store/counter/handlers";
 
 class Counter extends Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <button onClick={this.props.decrement}>-</button>
