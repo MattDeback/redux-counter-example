@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import Counter from "./modules/counter/Counter";
 import { connect } from "react-redux";
+import { isFetching } from "./store/counter/selectors";
 import { resetter } from "./store/counter/handlers";
 
 class App extends Component {
   render() {
+    console.log(this.props.isFetching)
     return (
       <div className="App">
         <header className="App-header">
@@ -13,11 +15,14 @@ class App extends Component {
           <button onClick={this.props.reset}>reset</button>
         </header>
         <div>
-          <Counter />
+          { this.props.isFetching
+            ? "loading"
+            : <Counter />
+          }
         </div>
       </div>
     );
   }
 }
 
-export default connect(null, resetter)(App);
+export default connect(isFetching, resetter)(App);

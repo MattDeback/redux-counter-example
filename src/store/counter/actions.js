@@ -5,6 +5,12 @@ export function increment(incrementBy) {
   }
 }
 
+export function fetching() {
+  return {
+    type: "FETCHING"
+  }
+}
+
 export function decrement(decrementBy) {
   return {
     type: "DECREMENT",
